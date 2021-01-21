@@ -11,6 +11,6 @@ try{
 	});
 }
 catch(e){
-	console.error(e.message + "AAA");
+	console.error(e.message);
 }
 

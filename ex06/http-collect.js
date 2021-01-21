@@ -6,7 +6,7 @@
 /*   By: ksano <ksano@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 16:14:12 by ksano             #+#    #+#             */
-/*   Updated: 2020/12/28 17:09:59 by ksano            ###   ########.fr       */
+/*   Updated: 2021/01/21 20:07:53 by ksano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,24 @@ const bl = require('bl');
 const url = process.argv[2];
 
 
-http.get(url, (res) => {
-	res.pipe(bl((err, data) => {
-		if (err)
-			return console.error(err.message);
-		data = data.toString('ascii');
-		console.log(data.length);
-		console.log(data);
-	}))
-}).on('error', (e) => {
-	console.error(e.message);
-});
+try {
 
-return ;
+	http.get(url, (res) => {
+		res.pipe(bl((err, data) => {
+			if (err)
+				return console.error(err.message);
+			data = data.toString('ascii');
+			console.log(data.length);
+			console.log(data);
+		}))
+	}).on('error', (e) => {
+		console.error(e.message);
+	});
+} catch(e) {
+	console.error(e.message);
+}
+
+return;
 
 // http.get(url, (res) => {
 // 	let contents = '';

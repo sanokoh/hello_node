@@ -10,4 +10,4 @@ console.log(object + " is an " + typeof(object) + ".");
 
 console.log("true is a " + typeof(boolean) + ".");
 
-console.log("undefined is a " + typeof(undeclared) + ".");
+console.log("undefined is an " + typeof(undeclared) + ".");

@@ -6,7 +6,7 @@
 /*   By: ksano <ksano@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/20 08:32:14 by ksano             #+#    #+#             */
-/*   Updated: 2021/01/20 09:53:03 by ksano            ###   ########.fr       */
+/*   Updated: 2021/01/21 20:16:03 by ksano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ const server = net.createServer((c) => {
 				hours:		d.getHours(),
 				minutes:	d.getMinutes()
 				};
-	for (let value in times) {
-		if (value < 10)
-			value = `0${value}`;
+	for (const value in times) {
+		if (times[value] < 10)
+		times[value] = `0${times[value]}`;
 	}
 	c.write(`${year}-${times.month}-${times.day} ${times.hours}:${times.minutes}`);
 	c.write('\n');
