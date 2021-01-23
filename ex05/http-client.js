@@ -2,7 +2,6 @@ const http = require('http');
 const url = process.argv[2];
 
 try {
-
 	http.get(url, (res) => {
 		res.setEncoding('utf8');
 		res.on('error', (e) => {

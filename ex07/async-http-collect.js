@@ -6,7 +6,7 @@
 /*   By: ksano <ksano@student.42tokyo.jp>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 16:22:21 by ksano             #+#    #+#             */
-/*   Updated: 2021/01/19 21:38:48 by ksano            ###   ########.fr       */
+/*   Updated: 2021/01/23 14:43:44 by ksano            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,20 +25,6 @@ function get_result(url){
 		}).on("error", (err) => reject(err));
 	});
 }
-
-// async function main(){
-// 	try{
-// 		i = 2;
-// 		while (process.argv.length - i > 0){
-// 			get_result(process.argv[i]).then((data) => {
-// 				console.log(data);
-// 			});
-// 			i++;
-// 		}
-// 	} catch(e){
-// 		console.error(e.message);
-// 	}
-// }
 
 async function display_result(){
 	try{
